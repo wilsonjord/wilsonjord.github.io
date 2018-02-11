@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>A Wordament Solver</title>
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: black;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://wilsonjord.github.io//css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dlang.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/d.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/D.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.35" />
+        
+        
+        
+    </head>
+
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">A Wordament Solver</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:wilsonjord@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/wilsonjord/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="http://www.linkedin.com/in/jordan-wilson-52436891"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/wordament-solver/">A Wordament Solver</a></h4>
+    <h5>February 11, 2018</h5>
+    
+    <a href="https://wilsonjord.github.io/tags/dlang"><kbd class="item-tag">dlang</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<h2 id="introduction">Introduction</h2>
+
+<p>When I was younger, I used to play a word game called Boggle, where one would try to find as many words as possible from random letters. I had always suspected that I wasn&rsquo;t good at the game; luckily for me, Wordament, Microsoft&rsquo;s online multiplayer tournament version, left me in no doubt at all.</p>
+
+<p>Clearly, if I was to improve my score, I would need to <del>diligently practice</del> cheat.</p>
+
+<h2 id="grid-and-tiles">Grid and Tiles</h2>
+
+<p>The game is simple; given 16 letter tiles, create as many words as possible, while:</p>
+
+<ul>
+<li>only using a tile once per word</li>
+<li>maintaining a continuous tile sequence</li>
+</ul>
+
+<p><img src="/images/snip.jpg" alt="Drawing" style="width: 300px;"/></p>
+
+<p>For example, RIOT is valid, but PILOT would not be allowed.</p>
+
+<p>To represent the grid above, I decided on a simple implementation where a tile was an integer:</p>
+
+<pre><code class="language-D">enum Grid : int {width=4, height=4, size=Grid.width*Grid.height}
+alias Tile = int;
+enum TileNA = -1;
+enum Dir {up, down, left, right, upLeft, upRight, downLeft, downRight}
+</code></pre>
+
+<p>This would allow simple mathamatical checks on the tile itself to infer where in the grid it would be. Take a 4x4 grid that&rsquo;s set out in the following way:</p>
+
+<pre><code class="language-text">|0 |1 |2 |3 |
+|4 |5 |6 |7 |
+|8 |9 |10|11|
+|12|13|14|15|
+</code></pre>
+
+<p>Any number less then the <em>width</em> of the grid is in the first row (and thus no up tile); any number equal to or greater than <em>width</em> *(<em>height</em>-1) will be the last row (and thus no down tile), and so on and so forth.</p>
+
+<pre><code class="language-D">auto isFirstRow (Tile tile){
+    return (tile &lt; Grid.width);
+}
+
+auto isLastRow (Tile tile) {
+    return (tile &gt;= Grid.width*(Grid.height-1));
+}
+
+auto isFirstColumn (Tile tile) {
+    return (tile % Grid.width == 0);
+}
+
+auto isLastColumn (Tile tile) {
+    return (tile % Grid.width == Grid.width-1);
+}
+</code></pre>
+
+<p>Once we can establish if a tile is not on a particular edge, it&rsquo;s trival to obtain tile in a particular direction.</p>
+
+<pre><code class="language-D">auto getTile (Tile tile, Dir dir) {
+    if (tile==TileNA) return TileNA;
+    final switch (dir) {
+        case Dir.up: return (tile.isFirstRow) ? TileNA : tile - Grid.width;
+        case Dir.down: return (tile.isLastRow) ? TileNA : tile + Grid.width;
+        case Dir.left: return (tile.isFirstColumn) ? TileNA : tile - 1;
+        case Dir.right: return (tile.isLastColumn) ? TileNA : tile + 1;
+        case Dir.upLeft: return tile.getTile(Dir.up).getTile(Dir.left);
+        case Dir.upRight: return tile.getTile(Dir.up).getTile(Dir.right);
+        case Dir.downLeft: return tile.getTile(Dir.down).getTile(Dir.left);
+        case Dir.downRight: return tile.getTile(Dir.down).getTile(Dir.right);
+    }
+}
+
+unittest {
+    assert (0.getTile(Dir.right)==1);
+    assert (1.getTile(Dir.left)==0);
+    assert (5.getTile(Dir.downRight)==10);
+    assert (13.getTile(Dir.upLeft).getTile(Dir.right)==9);
+}
+</code></pre>
+
+<p><em>TODO: need to limit unittest to only test 4x4 grid</em></p>
+
+<h2 id="paths">Paths</h2>
+
+<p>The main logic of the program will be to work through every single sequence of tiles (or paths) possible, and check the words generated by the paths against a dictionary.</p>
+
+<p>Given the millions of paths that a grid 4x4 or larger would generate, it makes sense to do as much pre-computing as possible; in this case, for each tile, I&rsquo;ve created a mapping to its neighbouring tiles:</p>
+
+<pre><code class="language-D">immutable Tile[][Tile] tileNeighbours;
+static this() {
+    auto getNeighbours (Tile tile) {
+        import std.traits : EnumMembers;
+        Tile[] rvalue;
+        foreach (dir; EnumMembers!Dir) {
+            rvalue ~= tile.getTile (dir);
+        }
+        return rvalue.filter!(a =&gt; a != TileNA).array;
+    }
+
+    import std.typecons : tuple;
+    tileNeighbours = iota(0,Grid.size)          // for each tile in our grid
+        .map!(a =&gt; tuple(a, getNeighbours(a)))  // get all the tiles that surround it
+        .assocArray;                            // and store for fast reference
+}
+
+auto neighbours (Tile tile) {
+    return tileNeighbours[tile];
+}
+
+unittest {
+    assert (11.neighbours.dup.sort.equal([6,7,10,14,15]));
+}
+</code></pre>
+
+<p>Now we can obtain the neigbouring tiles of any particular tile, we can recursively generate paths (a &ldquo;tree traversal&rdquo;). Take a 2x2 grid:</p>
+
+<pre><code class="language-text">|0 |1 |
+|2 |3 |
+</code></pre>
+
+<p>The tree representing all paths looks like:</p>
+
+<p><img src="/images/paths.svg" alt="Tree" /></p>
+
+<p>Traversing these paths would get six 4-tile paths, six 3-tile paths, three 2-tile paths, and one 1-tile path - 16 paths in total. Did I say total? I meant total paths that start with tile 0. To get <em>all</em> paths, you also need to traverse the tree that starts with tile 1, the tree that starts with tile 2, and the tree that starts with tile 3. That will give 64 paths in total&hellip;total.</p>
+
+<p>And here&rsquo;s how we do it:</p>
+
+<pre><code class="language-D">alias Path = Tile[Grid.size];
+Path currentPath = TileNA.repeat(Grid.size).array; // initialise &quot;null&quot; path
+auto currentIndex=0;
+
+void traverse (Tile tile) {
+    // step forward, add tile to path
+    currentPath[currentIndex] = tile;
+    currentIndex++;
+
+    // look for next tile to add
+    foreach (n; tile.neighbours) {
+        if (!currentPath[].canFind(n)) traverse (n);
+    }
+
+    // ------
+    // path finished, do work with path
+    // ------
+    
+    // step back, remove tile from path
+    currentIndex--;
+    currentPath[currentIndex] = TileNA;
+}
+iota(0,Grid.size).each!(a =&gt; traverse(a)); // for each tile, do a tree traversal
+</code></pre>
+
+<p>Using our same 2x2 grid, for tile 0 it would produce the paths:</p>
+
+<pre><code class="language-text">[0, 2, 3, 1]
+[0, 2, 3, -1]
+[0, 2, 1, 3]
+[0, 2, 1, -1]
+[0, 2, -1, -1]
+[0, 1, 3, 2]
+[0, 1, 3, -1]
+[0, 1, 2, 3]
+[0, 1, 2, -1]
+[0, 1, -1, -1]
+[0, 3, 1, 2]
+[0, 3, 1, -1]
+[0, 3, 2, 1]
+[0, 3, 2, -1]
+[0, 3, -1, -1]
+[0, -1, -1, -1]
+</code></pre>
+
+<h2 id="words">Words</h2>
+
+<p>We have our paths (which for a 4x4 grid, is over 12 million). We now need our words. Two types of words, in fact.</p>
+
+<h3 id="dictionary-words">Dictionary Words</h3>
+
+<p>In an ideal world, we would use the exact word list that the Wordament game itself uses, however, my Google-fu was not strong enough to obtain such a list, so I ended up trying several different word lists:</p>
+
+<ul>
+<li>Collins Scrabble Words (found here: <a href="http://norvig.com/ngrams/">http://norvig.com/ngrams/</a>) - the offical world scabble list (excluding North America)</li>
+<li>GNU Collaborative International Dictionary of English (<a href="http://gcide.gnu.org.ua/">http://gcide.gnu.org.ua/</a>)</li>
+<li>A list I generated myself by downloading the whole e-book catalog of Project Gutenberg (<a href="https://www.gutenberg.org/">https://www.gutenberg.org/</a>), which was around 70,000 books (there&rsquo;s no kill like overkill)</li>
+</ul>
+
+<p>Logic would suggest the world official scrabble list being the most suitable (the North American offical list perhaps even more so), but the other sources provided a nice exercise in data extraction anyway.</p>
+
+<pre><code class="language-D">/// Returns an immutable array of words that are between min and max length
+auto readDictionary(int min=3, int max=14) {
+    return File(&quot;sowpods.txt&quot;,&quot;r&quot;)
+                .byLine
+                .filter!(a =&gt; a.length &gt;= min &amp;&amp; a.length &lt;= max)
+                .array
+                .assumeUnique;
+}
+
+// create word list, and associative array for fast lookup
+immutable words = readDictionary;
+immutable fastLookup = words.enumerate(0)
+                            .map!(a =&gt; tuple(a.value,a.index))
+                            .assocArray;
+</code></pre>
+
+<h3 id="actual-words">Actual Words</h3>
+
+<p>We need something to search for, so it&rsquo;s time to populate our grid with letters, and to do that, we&rsquo;ll use the trusty old keyboard input, where the user types in the letters of the Wordament grid, going left to right, top to bottom.</p>
+
+<p>For example, the Wordament grid shown previously would be input as such:</p>
+
+<pre><code class="language-text">riotelupprsusaso
+</code></pre>
+
+<p>These letters will be transformed into an arrary of letters:</p>
+
+<pre><code class="language-text">[[r],[i],[o],[t],[e],[l],[u],[p],[p],[r],[s],[u],[s],[a],[s],[o]]
+</code></pre>
+
+<p>Each tile path becomes an index to the array, and forms a word. For example, the path <span style="font-family: Courier" weight="heavy">[0,1,2,3]</span> would generate the word &ldquo;riot&rdquo;.</p>
+
+<p>Now you might ask &ldquo;why an array of strings? why not just a single string, and index that directly?&rdquo;. Well, it&rsquo;s so we can account for the types of Wordament games where a tile may contain more than one letter.</p>
+
+<p>Take this grid:</p>
+
+<p><img src="/images/multi-letter.png" alt="Drawing" style="width: 300px;"/></p>
+
+<p>To input multi-letter tiles, we use a space as a delimiter, and would type as follows:</p>
+
+<pre><code class="language-text">lnifserp ar ioefkel
+</code></pre>
+
+<p>This gets turned into the array:</p>
+
+<pre><code class="language-text">[[l],[n],[i],[f],[s],[e],[r],[p],[ar],[i],[o],[e],[f],[k],[e],[l]]
+</code></pre>
+
+<p>Indexing remains the same; the path <span style="font-family: Courier">[1,5,8]</span> would generate the word &ldquo;near&rdquo;.</p>
+
+<pre><code class="language-D">auto getLetters(T) (T line) {
+    string[] letters;
+    letters.length=Grid.size;
+    
+    auto index=0;
+    auto multiWord=false;
+    import std.ascii : toLower, isAlpha;
+    foreach (letter; line.filter!(a =&gt; a.isAlpha || a==' ')) { // only letters and space
+        if (index &gt;= letters.length) throw new Exception (&quot;Error: too many letters&quot;);
+
+        if (letter == ' '){
+            multiWord = !multiWord;
+        } else {
+            letters[index]~=letter.toLower;
+        }
+        if (!multiWord) index++;
+    }
+    if (letters.canFind!(a =&gt; a.empty)) throw new Exception (&quot;Error: not enough letters&quot;);
+    return letters;
+}
+
+unittest {
+    assert (&quot;qwertyuioplkjhgf&quot;.getLetters.equal([&quot;q&quot;,&quot;w&quot;,&quot;e&quot;,&quot;r&quot;,
+                                                 &quot;t&quot;,&quot;y&quot;,&quot;u&quot;,&quot;i&quot;,
+                                                 &quot;o&quot;,&quot;p&quot;,&quot;l&quot;,&quot;k&quot;,
+                                                 &quot;j&quot;,&quot;h&quot;,&quot;g&quot;,&quot;f&quot;]));
+}
+</code></pre>
+
+<h2 id="the-main-loop">The Main Loop</h2>
+
+<p>Time to bring all the elements together:</p>
+
+<ul>
+<li>Get letter grid input from user</li>
+<li>Iterate through all possible paths</li>
+<li>For each path, map it against the grid, and create a word</li>
+<li>Check word against the dictionary, storing all words that are found</li>
+<li>Once all paths have been checked, print the results</li>
+</ul>
+
+<pre><code class="language-D">void main(){
+    // timer code
+    import std.datetime.stopwatch;
+    auto sw = StopWatch();
+
+    immutable words = readDictionary;
+    immutable fastLookup = words.enumerate(0)
+                                .map!(a =&gt; tuple(a.value,a.index))
+                                .assocArray;
+    // enter input loop;
+    while (true) {
+        write (&quot;Enter &gt; &quot;);
+        auto line = readln;
+        if (line.startsWith (&quot;exit&quot;)) break;
+
+        try {
+            sw.start;
+            auto letters = line.getLetters;
+            alias Path = Tile[Grid.size];
+            Path currentPath = TileNA.repeat(Grid.size).array;
+
+            assert (currentPath.length == letters.length);
+
+            auto currentIndex=0; // keep track of where in the path we are
+            int[] foundWords;
+            void traverse (Tile tile) {
+                currentPath[currentIndex] = tile;
+                currentIndex++;
+
+                foreach (n; tile.neighbours) {
+                    // don't step to a tile which is already in the path
+                    if (!currentPath[].canFind(n)) traverse (n);
+                }
+
+                // finished path here
+                // construct a word from path
+                auto toTest = currentPath[].filter!(a =&gt; a!=TileNA)
+                                           .map!(a =&gt; letters[a])
+                                           .to!string;
+
+                // check if word in dictionary
+                auto wordIndex = fastLookup.get(toTest,-1);
+                if (wordIndex != -1) foundWords ~= wordIndex;
+
+                currentIndex--;
+                currentPath[currentIndex] = TileNA;
+            }
+            iota(0,Grid.size).each!(a =&gt; traverse(a));
+            sw.stop;
+            auto timeTaken = sw.peek.split;
+            // finished search, pretty print results
+            import std.string : leftJustify;
+            auto uniqueFound = foundWords.sort.uniq;
+            writefln (&quot;Total words found: %s, time taken %s s, %s ms&quot;,
+                uniqueFound.count,
+                timeTaken.seconds,
+                timeTaken.msecs);
+            uniqueFound
+                .map!(a =&gt; words[a].dup)
+                .array
+                // sort by length, then by alphabet
+                .multiSort!((a,b) =&gt; a.length &gt; b.length, (a,b) =&gt; a &lt; b)
+                // print in 5 columns
+                .map!(a =&gt; a.to!string.leftJustify(16,' '))
+                .chunks(5)
+                .map!(a =&gt; a.joiner(&quot; &quot;))
+                .each!(a =&gt; a.writeln);
+        } catch (Exception ex) {
+            ex.msg.writeln;
+        }
+    }
+    return;
+}
+</code></pre>
+
+<h2 id="game-time">Game Time</h2>
+
+<p>Warm up finger exercises? Check. <br>
+Sports drink to the ready? Check. <br>
+Enthusiastic crowd of supporters? <span style="font-size:xx-small;">Check.</span><br></p>
+
+<p>Loading up Wordament on my PC, the following grid appeared:</p>
+
+<p><img src="/images/real-game.png" alt="Drawing"/></p>
+
+<p>I enter the line into my solver:</p>
+
+<pre><code class="language-text">Enter &gt; aupaterszcsecesi
+</code></pre>
+
+<p>A hush falls upon the crowd, as the solver searches for words, the seconds ticking by&hellip;</p>
+
+<p>After what seems like an eternity, the words are displayed:</p>
+
+<pre><code class="language-text">Enter &gt; aupaterszcsecesi
+Total words found: 220, time taken 5 s, 96 ms
+precesses        asperses         ecesises         recesses         repasses
+asperse          cresses          cresset          pareses          paresis
+parsecs          precess          presses          respect          scrapes
+seisers          serapes          tessera          aspect           aspers
+cesses           crapes           crases           ecesis           erases
+parsec           parses           passer           passes           perses
+prases           preset           prezes           purses           putzes
+recces           recess           repass           reseat           reseau
+resect           scrape           scraps           secret           seiser
+seises           sepses           serape           setups           spares
+sparse           sprues           taupes           terces           upases
+urases           apers            apres            apses            arses
+arsis            asper            asses            asset            auras
+aurei            aures            ceres            crape            craps
+crass            cress            cruet            erase            erect
+erses            esses            pares            pareu            parse
+pases            passe            peres            perse            prase
+presa            prese            press            pruta            purse
+rapes            rases            recce            recta            reset
+scrap            seise            seres            setup            sises
+spare            spars            specs            sprue            spues
+spurs            sputa            taupe            tepas            terce
+terse            turps            urase            aper             apes
+apse             arcs             area             ares             arse
+ates             aura             ceps             cere             cess
+crap             ecru             eras             eses             pare
+pars             pase             pass             peat             pecs
+pere             prez             pure             purs             putz
+rape             raps             rase             rasp             recs
+reis             reps             rues             seat             secs
+sect             seis             sera             sere             sers
+seta             spar             spec             spue             spur
+tepa             tups             upas             urea             urps
+ursa             utes             zeps             zeta             ape
+arc              are              ars              asp              ass
+ate              cep              cru              eat              eau
+era              ere              ers              ess              eta
+par              pas              pea              pec              per
+pes              pet              pur              put              rap
+ras              rec              rei              rep              res
+ret              rue              rut              sap              sea
+sec              sei              ser              set              sis
+spa              tae              tau              tea              tup
+ups              urp              uta              ute              zep
+</code></pre>
+
+<p>I go back to the game, take a deep breath, and simply start typing the words as fast as I can. The crowd starts cheering, amazed at the skill on display before them - <em>precesses</em>&hellip;BANG - 45 points, <em>asperses</em>&hellip;BOOM - 40 points&hellip;the crowd goes wild, all thinking the same thing: <em>can this Wordament warrior improve on his usual 200-300 odd point scores?</em></p>
+
+<p>Funnily enough, yes, as it turns out, I can:</p>
+
+<p><img src="/images/real-game-results.png" alt="Drawing"/></p>
+
+<p><img src="/images/real-game-leaderboard.png" alt="Drawing"/></p>
+
+<p>Victory! The crowd erupts! My dedication and hard work learning new words and patterns and putting in the hours of practice has paid off!</p>
+
+<p>Ok maybe not quite that, but to be fair, it did take me a good weekend creating this solver (plus the extra hours spent sidetracked by making my own word frequency lists). The solver was an enjoyable exercise, but there are a few things that could be worked upon:</p>
+
+<ul>
+<li>Online solvers seem to take less than a second (my solver ~5 seconds). This peeves me; I think Path iteration can most likely be done in parallel, which should result in a 2-3x speed improvement</li>
+<li>Instead of manually typing in the results, investigate the solver automatically typing in the input. Less excitment for the crowd, but hey, all that typing takes its toll on the body</li>
+<li>The results of the word search is ordered by word length, but may be better to order by word score</li>
+<li>The additional modes that Wordament offers (such as tiles with an either/or letter, or words that end with certain letters, or even just a high value letter) are still to be implemented</li>
+</ul>
+
+<p>These things could well become a future blog post, but until then, I shall take a break from Wordament, as I have an ESPN interview to prepare for&hellip;</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "username" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

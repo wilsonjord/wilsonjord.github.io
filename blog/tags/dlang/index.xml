@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dlang on Bit Hammer</title>
+    <link>https://wilsonjord.github.io/tags/dlang/</link>
+    <description>Recent content in Dlang on Bit Hammer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wilsonjord.github.io/tags/dlang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Wordament Solver</title>
+      <link>https://wilsonjord.github.io/post/wordament-solver/</link>
+      <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://wilsonjord.github.io/post/wordament-solver/</guid>
+      <description>Introduction When I was younger, I used to play a word game called Boggle, where one would try to find as many words as possible from random letters. I had always suspected that I wasn&amp;rsquo;t good at the game; luckily for me, Wordament, Microsoft&amp;rsquo;s online multiplayer tournament version, left me in no doubt at all.
+Clearly, if I was to improve my score, I would need to diligently practice cheat.</description>
+    </item>
+    
+  </channel>
+</rss>

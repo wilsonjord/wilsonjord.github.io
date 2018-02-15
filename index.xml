@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PRINT &#34;CHEESE!&#34;</title>
-    <link>wilsonjord.github.io/</link>
+    <link>/</link>
     <description>Recent content on PRINT &#34;CHEESE!&#34;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 15 Feb 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="wilsonjord.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rosetta Code</title>
-      <link>wilsonjord.github.io/projects/rosetta/</link>
+      <link>/projects/rosetta/</link>
       <pubDate>Thu, 15 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>wilsonjord.github.io/projects/rosetta/</guid>
+      <guid>/projects/rosetta/</guid>
       <description>Rosetta Code has over 800 programming tasks to solve. Although D has solved many of those tasks already, I thought it would be an interesting exercise to see how I&amp;rsquo;d go about solving them myself.
 Source code: https://github.com/wilsonjord/rosetta Documentation: https://wilsonjord.github.io/docs/rosetta/docs/index.html</description>
     </item>
     
     <item>
       <title>A Wordament Solver</title>
-      <link>wilsonjord.github.io/blog/wordament-solver/</link>
+      <link>/blog/wordament-solver/</link>
       <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>wilsonjord.github.io/blog/wordament-solver/</guid>
+      <guid>/blog/wordament-solver/</guid>
       <description>Introduction When I was younger, I used to play a word game called Boggle, where one would try to find as many words as possible from random letters. I had always suspected that I wasn&amp;rsquo;t good at the game; luckily for me, Wordament, Microsoft&amp;rsquo;s online multiplayer tournament version, left me in no doubt at all.
 Clearly, if I was to improve my score, I would need to diligently practice cheat.</description>
     </item>

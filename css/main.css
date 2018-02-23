@@ -12,7 +12,7 @@
 
 /* Reset */
 
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, h2lower, p,
 	blockquote, pre, a, abbr,	acronym, address, big, cite, code, del, dfn, em,
 	img, ins, kbd, q, s, samp, small, strike, strong,	sub, sup, tt, var, b, u,
 	i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
@@ -1661,7 +1661,7 @@
 						font-weight: 800;
 						letter-spacing: 0.25em;
 						margin-top: 0.5em;
-						text-transform: uppercase;
+						text-transform: uppercase; 
 						white-space: nowrap;
 					}
 
@@ -1919,7 +1919,7 @@
 	    article.post p,
 	    article.post ol,
 	    article.post h2,
-	    article.post h3,
+		article.post h3,
 	    article.post h4 {
 	        color: #333333;
 	        /* Theoretically for IE 8 & 9 (more valid) */
@@ -2604,8 +2604,9 @@
 			}
 
 		#intro header h2 {
-			font-size: 1.5em;
+			font-size: 1.2em;
 			font-weight: 900;
+			text-transform: none;
 		}
 
 		#intro header p {
@@ -2619,7 +2620,7 @@
 			text-align: center;
 		}
 
-			#intro header h2 {
+			#intro header h2lower {
 				font-size: 2em;
 			}
 

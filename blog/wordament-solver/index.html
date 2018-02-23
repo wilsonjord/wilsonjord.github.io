@@ -328,7 +328,8 @@
   <header>
     <div class="title">
         
-            <h2><a href="/blog/wordament-solver/">A Wordament Solver</a></h2>
+            <h1><a href="/blog/wordament-solver/">A Wordament Solver</a></h1>
+            
         
         
             <p>Or how to search 12 million words</p>
@@ -468,19 +469,19 @@ enum Dir {up, down, left, right, upLeft, upRight, downLeft, downRight}
 <p>Any number less then the <em>width</em> of the grid is in the first row (and thus no up tile); any number equal to or greater than <em>width</em> *(<em>height</em>-1) will be the last row (and thus no down tile), and so on and so forth.</p>
 
 <pre><code class="language-D">auto isFirstRow (Tile tile){
-	return (tile &lt; Grid.width);
+    return (tile &lt; Grid.width);
 }
 
 auto isLastRow (Tile tile) {
-	return (tile &gt;= Grid.width*(Grid.height-1));
+    return (tile &gt;= Grid.width*(Grid.height-1));
 }
 
 auto isFirstColumn (Tile tile) {
-	return (tile % Grid.width == 0);
+    return (tile % Grid.width == 0);
 }
 
 auto isLastColumn (Tile tile) {
-	return (tile % Grid.width == Grid.width-1);
+    return (tile % Grid.width == Grid.width-1);
 }
 </code></pre>
 
@@ -529,7 +530,7 @@ static this() {
 
     import std.typecons : tuple;
     tileNeighbours = iota(0,Grid.size)          // for each tile in our grid
-        .map!(a =&gt; tuple(a, getNeighbours(a)))	// get all the tiles that surround it
+        .map!(a =&gt; tuple(a, getNeighbours(a)))  // get all the tiles that surround it
         .assocArray;                            // and store for fast reference
 }
 
@@ -954,7 +955,7 @@ ups              urp              uta              ute              zep
     
     
       <header>
-        <h2>PRINT &#34;CHEESE!&#34;</h2>
+        <h2>printf (&#34;CHEESE!&#34;);</h2>
         <p>Code & Photos</p>
       </header>
     
@@ -1239,7 +1240,7 @@ ups              urp              uta              ute              zep
       
         &copy; 2018
         
-          PRINT &#34;CHEESE!&#34;
+          printf (&#34;CHEESE!&#34;);
         
       .
       Powered by <a href="//gohugo.io" target="_blank">Hugo</a>

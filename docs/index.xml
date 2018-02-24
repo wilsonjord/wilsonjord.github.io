@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on printf (&#34;CHEESE!&#34;);</title>
+    <link>/docs/</link>
+    <description>Recent content in Docs on printf (&#34;CHEESE!&#34;);</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/docs/rosetta/docs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/rosetta/docs/</guid>
+      <description>API documentation      The search functionality needs JavaScript enabled
+  var symbolSearchRootDir = &#34;./&#34;; document.getElementById(&#39;symbolSearchPane&#39;).style.display = &#39;block&#39;;  rosetta   fizzbuzz    lettercount       Built with scod   API documentation   ModuleDescription    rosetta.fizzbuzz   Generalised solution to the &#34;fizzbuzz&#34; problem as stated by http://rosettacode.org/wiki/General_FizzBuzz     rosetta.lettercount   Solution to the &#34;</description>
+    </item>
+    
+  </channel>
+</rss>

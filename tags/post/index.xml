@@ -6,10 +6,21 @@
     <description>Recent content in Post on printf (&#34;CHEESE!&#34;);</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sentencing in NZ - A workflow example</title>
+      <link>/blog/sentencing/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/sentencing/</guid>
+      <description>Introduction The aim of this semi-formal article is to obtain some insights into sentencing in NZ, and establish if and what demographic-based characteristics exist, while demonstrating my workflow and thought process.
+Obtaining the Data The Source A quick google took me to Stats NZ, where I found what appeared to be their data extraction portal NZ.Stat.
+This data portal was split into several &amp;ldquo;themes&amp;rdquo;, which was useful in enabling me to navigate to the base table Adults convicted in court by sentence type - most serious offence calendar year.</description>
+    </item>
     
     <item>
       <title>A Wordament Solver</title>

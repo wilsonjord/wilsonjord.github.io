@@ -16,8 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/docs/rosetta/docs/</guid>
-      <description>API documentation      The search functionality needs JavaScript enabled
-  var symbolSearchRootDir = &#34;./&#34;; document.getElementById(&#39;symbolSearchPane&#39;).style.display = &#39;block&#39;;  rosetta   fizzbuzz    lettercount       Built with scod   API documentation   ModuleDescription    rosetta.fizzbuzz   Generalised solution to the &#34;fizzbuzz&#34; problem as stated by http://rosettacode.org/wiki/General_FizzBuzz     rosetta.lettercount   Solution to the &#34;</description>
+      <description>API documentationThe search functionality needs JavaScript enabled
+var symbolSearchRootDir = &#34;./&#34;;document.getElementById(&#39;symbolSearchPane&#39;).style.display = &#39;block&#39;;rosettafizzbuzzlettercountBuilt withscodAPI documentationModuleDescriptionrosetta.fizzbuzzGeneralised solution to the &#34;fizzbuzz&#34; problem as stated by http://rosettacode.org/wiki/General_FizzBuzzrosetta.lettercountSolution to the &#34;</description>
     </item>
     
   </channel>

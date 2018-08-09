@@ -1,1173 +1,377 @@
-<!DOCTYPE HTML>
-
-<html>
-    <head>
-        
-            
-                <title>printf (&#34;CHEESE!&#34;);</title>
-            
-        
-
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.35" />
-        
-
-
-        
-        
-            
-                <meta name="description" content="Jordan Wilson&#39;s Blog about programming and photography.">
-            
-        
-
-        <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="printf (&#34;CHEESE!&#34;);"/>
-<meta name="twitter:description" content="Jordan Wilson&#39;s Blog about programming and photography."/>
-
-        <meta property="og:title" content="printf (&#34;CHEESE!&#34;);" />
-<meta property="og:description" content="Jordan Wilson&#39;s Blog about programming and photography." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
-
-
-
-<meta property="og:updated_time" content="2018-05-10T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
-        <meta property="og:image" content="//images/logo.png">
-        <meta property="og:image:type" content="image/png">
-        <meta property="og:image:width" content="512">
-        <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="printf (&#34;CHEESE!&#34;);">
-<meta itemprop="description" content="Jordan Wilson&#39;s Blog about programming and photography.">
-
-
-        
-
-        
-            
-        
-
-        
-        
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
-            <link rel="stylesheet" href="/css/main.css">
-            <link rel="stylesheet" href="/css/add-on.css">
-            <link rel="stylesheet" href="/css/academicons.min.css">
-        
-
-        
-            
-                
-            
-        
-
-
-  
-    
-    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
-  
-
-
-      
-    </head>
-    <body>
-
-      
-      <div id="wrapper">
-
-    
-    
-<header id="header">
-    
-      <h1><a href="/">Home</a></h1>
+<!DOCTYPE html>
     
 
-    <nav class="links">
-        <ul>
-            
-                <li>
-                    <a href="/">
-                            <i class="fa fa-home">&nbsp;</i>Home
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/blog/">
-                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/projects/">
-                            <i class="fa fa-list">&nbsp;</i>Projects
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="/about/">
-                            <i class="fa fa-id-card-o">&nbsp;</i>About
-                    </a>
-                </li>
-            
-        </ul>
-    </nav>
-    <nav class="main">
-        <ul>
-            
-            <li id="share-nav" class="share-menu" style="display:none;">
-                <a class="fa-share-alt" href="#share-menu">Share</a>
-            </li>
-            
-            <li class="search">
-                <a class="fa-search" href="#search">Search</a>
-                <form id="search" method="get" action="//google.com/search">
-                    <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="/">
-                </form>
-            </li>
-            <li class="menu">
-                <a class="fa-bars" href="#menu">Menu</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+ <html lang="en"> 
 
-
-<section id="menu">
+<head>
+	<meta name="generator" content="Hugo 0.34" />
+        <title></title>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hugo Responsive Resume/CV Theme for Developers">
+    <meta name="author" content="Pavel Kanyshev">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" href="https://wilsonjord.github.io/cvassets/plugins/bootstrap/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://wilsonjord.github.io/cvassets/plugins/font-awesome/css/font-awesome.css">
 
     
-        <section>
-            <form class="search" method="get" action="//google.com/search">
-                <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="/">
-            </form>
-        </section>
-
+    <link id="theme-style" rel="stylesheet" href="https://wilsonjord.github.io/cvassets/css/styles.css">
+	
     
-        <section>
-            <ul class="links">
-                
-                    <li>
-                        <a href="/">
-                            <h3>
-                                <i class="fa fa-home">&nbsp;</i>Home
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/blog/">
-                            <h3>
-                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/projects/">
-                            <h3>
-                                <i class="fa fa-list">&nbsp;</i>Projects
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/about/">
-                            <h3>
-                                <i class="fa fa-id-card-o">&nbsp;</i>About
-                            </h3>
-                        </a>
-                    </li>
-                
-            </ul>
-        </section>
-
-    
-        <section class="recent-posts">
-            <div class="mini-posts">
-                <header>
-                    <h3>Recent Posts</h3>
-                </header>
-                
-
-                
-                    
-                
-
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/sentencing/">Sentencing in NZ - A workflow example</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-05-10'>
-                                    May 10, 2018</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/wordament-solver/">A Wordament Solver</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-02-11'>
-                                    February 11, 2018</time>
-                            </header>
-                            
-
-                        </article>
-                
-
-                
-            </div>
-        </section>
-
-    
-        
-</section>
-
-    
-    <div id="main">
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/blog/sentencing/">Sentencing in NZ - A workflow example</a></h2>
-        
-        
-            <p>A first look at sentencing by demographic</p>
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2018-05-10'>
-            May 10, 2018</time>
-        <span class="author">Jordan K. Wilson</span>
-        
-            <p>10 minute read</p>
-        
-        
-    </div>
-</header>
-
-
-  
-    <section id="social-share">
-      <ul class="icons">
-        
-
-
-
-<li>
-  <a href="//twitter.com/share?url=%2fblog%2fsentencing%2f&amp;text=Sentencing%20in%20NZ%20-%20A%20workflow%20example&amp;via=" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//plus.google.com/share?url=%2fblog%2fsentencing%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-  </a>
-</li>
-
-
-
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fsentencing%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//reddit.com/submit?url=%2fblog%2fsentencing%2f&amp;title=Sentencing%20in%20NZ%20-%20A%20workflow%20example" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fsentencing%2f&amp;title=Sentencing%20in%20NZ%20-%20A%20workflow%20example" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-
-
-
-
-
-
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by Jordan%20K.%20Wilson&amp;body=%2fblog%2fsentencing%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-
-      </ul>
-    </section>
-  
-
-  
-
-  <div id="content">
-    
-
-<h2 id="introduction">Introduction</h2>
-
-<p>The aim of this semi-formal article is to obtain some insights into sentencing in NZ, and establish if and what
-demographic-based characteristics exist, while demonstrating my workflow and thought process.</p>
-
-<h2 id="obtaining-the-data">Obtaining the Data</h2>
-
-<h4 id="the-source">The Source</h4>
-
-<p>A quick google took me to Stats NZ, where I found what appeared to be their data extraction portal <a href="http://nzdotstat.stats.govt.nz/wbos/Index.aspx">NZ.Stat</a>.</p>
-
-<p>This data portal was split into several &ldquo;themes&rdquo;, which was useful in enabling me to navigate to the base table <a href="http://nzdotstat.stats.govt.nz/wbos/Index.aspx?_ga=2.212428572.906678545.1526334839-2122598424.1525836383">Adults convicted in court by sentence type - most serious offence calendar year</a>. This table had the following variables available for selection/customisation:</p>
-
-<p><img src="/img/sentencing/nz-stat-variables.png"/></p>
-
-<p>Now, the table functionality that <a href="http://nzdotstat.stats.govt.nz/wbos/Index.aspx">NZ.Stat</a> provides actually isn&rsquo;t too bad (it works similar to a pivot-table found in spreadsheet software such as Excel), and a lot of information can be gathered just by using that - for example, expanding the gender field out quickly revealed <em>4x more total male convictions than female convictions</em>.</p>
-
-<p>Done! Analysis finished, and the conclusion is:</p>
-
-<blockquote>
-<p>Males are treated unfairly</p>
-</blockquote>
-
-<p>Ok facetious mode now off, and it&rsquo;s obviously that there is a lot more to understand, and almost always anything in-depth requires getting detailed with the full data set; thankfully, the ability to export to an extract type file is provided.</p>
-
-<h4 id="exporting-the-data">Exporting the Data</h4>
-
-<p>Before exporting the data, I reviewed the fields, and decided to split the data out by the following fields:</p>
-
-<ul>
-<li>Main offence</li>
-<li>Gender</li>
-<li>Ethnicity</li>
-<li>Sentence</li>
-<li>Calendar year</li>
-</ul>
-
-<p>The Age and Court fields I was content to leave aggregated for now.</p>
-
-<p>The Export function itself provides a few options:</p>
-
-<p><img src="/img/sentencing/nz-stat-export.png"/></p>
-
-<p>The Excel option looked like what was already displayed on the webpage, so not suitable as I wanted to do my own aggreations.</p>
-
-<p>The CSV option is generally a solid standard option, however, on playing around with this functionality, I did actually hit the 1,00,000 row limit, and being emailed the reports sometimes took till the next day.</p>
-
-<p>The SDMX option seemed good; I didn&rsquo;t know what SDMX meant, but clearly it was some sort of XML file (which is another common format for data transfer). Generally, I&rsquo;ve found XML to be more strict at following at specification.</p>
-
-<p>Using the Compact Data option and exporting to SDMX gives a file like:</p>
-
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;message:CompactData xmlns=&quot;http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message&quot; xmlns:common=&quot;http://www.SDMX.org/resources/SDMXML/schemas/v2_0/common&quot; xmlns:compact=&quot;http://www.SDMX.org/resources/SDMXML/schemas/v2_0/compact&quot; xmlns:oecd=&quot;http://oecd.stat.org/Data&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:message=&quot;http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message&quot; xsi:schemaLocation=&quot;http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message http://www.sdmx.org/docs/2_0/SDMXMessage.xsd http://oecd.stat.org/Data http://WDMZAPP14.stats.govt.nz/RestSDMX/sdmx.svc/GetSchema/TABLECODE7353&quot;&gt;
-  &lt;Header&gt;
-    &lt;ID&gt;none&lt;/ID&gt;
-    &lt;Test&gt;false&lt;/Test&gt;
-    &lt;Truncated&gt;false&lt;/Truncated&gt;
-    &lt;Prepared&gt;2018-05-15T11:56:33&lt;/Prepared&gt;
-    &lt;Sender id=&quot;OECD&quot;/&gt;
-  &lt;/Header&gt;
-  &lt;oecd:DataSet xmlns:oecd=&quot;http://oecd.stat.org/Data&quot; keyFamilyURI=&quot;http://WDMZAPP14.stats.govt.nz/RestSDMX/sdmx.svc/GetKeyFamily/TABLECODE7353/OECD/?resolveRef=true&quot;&gt;
-    &lt;oecd:Series COURT_CLUSTER=&quot;T&quot; MAIN_OFFENCE=&quot;01&quot; AGE_GROUP=&quot;T&quot; GENDER=&quot;M&quot; ETHNICITY=&quot;C&quot; SENTENCE=&quot;100&quot; YEAR=&quot;1980&quot; TIME_FORMAT=&quot;P1Y&quot;&gt;
-      &lt;oecd:Obs TIME=&quot;9999&quot; OBS_VALUE=&quot;19&quot;/&gt;
-    &lt;/oecd:Series&gt;
-    &lt;oecd:Series COURT_CLUSTER=&quot;T&quot; MAIN_OFFENCE=&quot;01&quot; AGE_GROUP=&quot;T&quot; GENDER=&quot;M&quot; ETHNICITY=&quot;C&quot; SENTENCE=&quot;100&quot; YEAR=&quot;1981&quot; TIME_FORMAT=&quot;P1Y&quot;&gt;
-      &lt;oecd:Obs TIME=&quot;9999&quot; OBS_VALUE=&quot;21&quot;/&gt;
-    &lt;/oecd:Series&gt;
-</code></pre>
-
-<p>It was at this moment I thought about reverting back to CSV again, but I decided to persist.</p>
-
-<h4 id="processing-the-data">Processing the Data</h4>
-
-<p>It seemed reasonably clear to me that each &ldquo;row&rdquo; that you&rsquo;d find in the CSV export is represented by the <code>oecd:Series</code> element:</p>
-
-<pre><code class="language-xml">&lt;oecd:Series COURT_CLUSTER=&quot;T&quot; MAIN_OFFENCE=&quot;01&quot; AGE_GROUP=&quot;T&quot; GENDER=&quot;M&quot; ETHNICITY=&quot;C&quot; SENTENCE=&quot;100&quot; YEAR=&quot;1980&quot; TIME_FORMAT=&quot;P1Y&quot;&gt;
-  &lt;oecd:Obs TIME=&quot;9999&quot; OBS_VALUE=&quot;19&quot;/&gt;
-&lt;/oecd:Series&gt;
-</code></pre>
-
-<p>It was also clear that <code>OBS_VALUE=&quot;19&quot;</code> was the value itself, i.e. the person count. What wasn&rsquo;t clear was the apparent coding system being used, such as <code>MAIN_OFFENCE=&quot;01&quot;</code> and <code>ETHNICITY=&quot;C&quot;</code>.</p>
-
-<p>I was able to find the <code>MAIN_OFFENCE</code> classification, but needed to construct my own mapping for <code>SENTENCE</code> and <code>ETHNICITY</code>.</p>
-
-<p>All this was incorporated into a program I wrote to convert the XML into a CSV file:</p>
-
-<pre><code class="language-D">/+ dub.sdl:
-    name &quot;xml2csv&quot;
-    dependency &quot;dxml&quot; version=&quot;~&gt;0.3.2&quot;
-+/
-
-void main(string[] args) {
-    import dxml.dom;
-    import std.stdio;
-    import std.algorithm;
-    import std.range;
-    
-    if (args.length != 3) {
-        writeln (&quot;xml2csv in out&quot;);
-        return;
-    }
-    
-    // load offence codes
-    import std.typecons : tuple;
-    auto offenseCodes = File(&quot;offence_codes.txt&quot;)
-                            .byLineCopy
-                            .drop(1)                            // get rid of header
-                            .map!(a =&gt; a.replace(&quot;\r&quot;,&quot;&quot;))      // some files have nix terminators
-                            .map!(a =&gt; a.splitter(&quot;\t&quot;).array)
-                            .map!(a =&gt; tuple(a[0],a[1]))
-                            .assocArray;
-    
-    auto ethnicCodes = [&quot;C&quot; : &quot;European&quot;,
-                        &quot;M&quot; : &quot;Maori&quot;,
-                        &quot;P&quot; : &quot;Pacific&quot;,
-                        &quot;O&quot; : &quot;Other&quot;,
-                        &quot;X&quot; : &quot;Unknown/Corporation&quot;];
-                        
-    auto sentenceCodes = [&quot;100&quot; : &quot;Imprisonment&quot;,
-                          &quot;200&quot; : &quot;Community&quot;,
-                          &quot;16&quot; : &quot;Monetary&quot;,
-                          &quot;23&quot; : &quot;Other&quot;,
-                          &quot;29&quot; : &quot;Not recorded&quot;];
-    
-    auto getDescription(T) (T attribute) {
-        import std.format : format;
-        switch (attribute.name) {
-            default: return attribute.value;
-            case &quot;MAIN_OFFENCE&quot;:
-                return offenseCodes[attribute.value];
-            case &quot;ETHNICITY&quot;:
-                return ethnicCodes[attribute.value];
-            case &quot;SENTENCE&quot;:
-                return sentenceCodes[attribute.value];
-        }
-    }
-    
-    // read xml
-    import std.file : read;
-    import std.conv : to;
-    auto dom = args[1].read.to!string.parseDOM;
-    auto dataSet = dom.children[0]  // messageCompactData
-                      .children[1]; // oecd:DataSet
-                      
-    // write output
-    auto fileOut = File(args[2],&quot;w&quot;);
-    auto headerWritten = false;
-    foreach (seriesEntry; dataSet.children
-                                 .filter!(a =&gt; a.name.equal(&quot;oecd:Series&quot;))) {
-        if (!headerWritten) {
-            fileOut.write (seriesEntry.attributes
-                               .map!(a =&gt; a.name)
-                               .joiner(&quot;,&quot;));
-            fileOut.writeln (&quot;,VALUE&quot;);      
-            headerWritten=true;
-        }
-        
-        fileOut.write (seriesEntry.attributes
-                            .map!(a =&gt; getDescription(a))
-                            .joiner(&quot;,&quot;));
-                          
-        fileOut.writeln (&quot;,&quot; ~ seriesEntry.children[0]
-                                          .attributes
-                                          .find!(a =&gt; a.name.equal(&quot;OBS_VALUE&quot;))
-                                          .front
-                                          .value);
-    }
-}
-</code></pre>
-
-<p>I won&rsquo;t go into the details of the code, but suffice to say, it makes a nice little CSV file to look at:</p>
-
-<pre><code>COURT_CLUSTER,MAIN_OFFENCE,AGE_GROUP,GENDER,ETHNICITY,SENTENCE,YEAR,TIME_FORMAT,VALUE
-T,Homicide and Related Offences,T,M,European,Imprisonment,1980,P1Y,19
-T,Homicide and Related Offences,T,M,European,Imprisonment,1981,P1Y,21
-T,Homicide and Related Offences,T,M,European,Imprisonment,1982,P1Y,27
-</code></pre>
-
-<h2 id="investigating-the-data">Investigating the Data</h2>
-
-<p>Now we are ready to investigate. Let&rsquo;s keep in mind that first insight that leaped out initially:</p>
-
-<blockquote>
-<p>Between 1980-2017, there have been 4x more male convictions than female.</p>
-</blockquote>
-
-<p><strong>Note:</strong> Although technically different, for this analysis I&rsquo;m going to assume that the rate of convictions can be used as a proxy for the rate of offending.</p>
-
-<p>Seems clear that the rate of offending is much high among males than females - let&rsquo;s try get a better picture:</p>
-
-<p><img src="/img/sentencing/plot-simple-trend.png"/><br />
-Figure 1: Total sentences per calendar year</p>
-
-<p>Even a simple trendline as seen in Figure 1 shows some interesting things:</p>
-
-<ul>
-<li>Shows the overall &ldquo;4x more male convictions&rdquo; insight to be consistent throughout the time period, and not a result of a wild outlier</li>
-<li>The trends themselves are quite similar; male convictions go up between 1985-1989, female convictions go up; male trending downwards from 2010-2015, females also trend down</li>
-</ul>
-
-<p>The second point I find quite interesting, and the most obvious factor I can think of is peaks/troughs in population, however, Figure 2 shows a fairly linear increasing population compared with the sentencing trends, which eliminates population spikes as a factor.</p>
-
-<p><img src="/img/sentencing/plot-rescaled-trend.png"/><br />
-Figure 2: Mean normalised sentences (with mean normalised population imposed)</p>
-
-<p><strong>Note:</strong> By normalising the data, we can see more clearly that male <em>and</em> female have very similar peak/trough characteristics; good to see that whatever external factors ares causing spikes (perhaps policy or policing changes), it is being applied to male/females somewhat equally.</p>
-
-<p>At this point, it&rsquo;s unlikey that we can uncover any reason behind the higher rate of offending among males using our current dataset (I suspect sociological and even biological evidence would need to be introduced), nor the explainations behind the peaks/troughs of the offending (policy or policing changes would be the first thing I would look at), so regarding overall conviction rates, we have:</p>
-
-<blockquote>
-<p>Average conviction rate of males per calendar year is <strong>296 per 10,000</strong> males.<br />
-Average conviction rate of females per calendar year is <strong>72 per 10,000</strong> females.</p>
-</blockquote>
-
-<p><strong>Note:</strong> The averages stated above are <em>time weighted</em> averages. The full dataset ranges from 1980 - 2017. Typically, you&rsquo;d see either a total simple average across the years, or you&rsquo;d pick the most recent year (or years), such as &ldquo;average rate for the past 5 years&rdquo;. In this case however, I wanted to keep the entire range of data, but give more emphasis on the recent years, which I&rsquo;ve done using a simple linear weighting.</p>
-
-<h4 id="offending-profile-by-gender">Offending Profile by Gender</h4>
-
-<p>Accepting the higher rate of offending amongst males, there is still plenty of insights to be uncovered; consider Figure 3:</p>
-
-<p><img src="/img/sentencing/table-offence-rate.png" alt="drawing" style="width: 722.5px;"/><br />
-Figure 3: Conviction rates by Gender (blue: males proportionally higher, red: females proportionally higher)</p>
-
-<p>Figure 3 (generated by a reporting program I wrote, <code>reportd</code>), shows the majority of offences for both genders to be traffic/vehicle related, with over 35% of all offence comitted falling into that category. Other categories show distinct variations by gender however, with Sexual Asault and Related Offences almost being exclusively male, and the following offence categories having much higher rates compared with females:</p>
-
-<ul>
-<li>Unlawful Entry/Break and Enter (11x higher than female)</li>
-<li>Weapons/Explosives (11x higher)</li>
-<li>Abduction/Harassment (10x higher)</li>
-<li>Robbery (9x higher)</li>
-</ul>
-
-<p>Some interesting characteristics appear when looking at things at a proportional level:</p>
-
-<ul>
-<li>Theft makes up 12% of total female offending (compared with 7% for males)</li>
-<li>Fraud/Deception is 7% of total female offending (compared with 2% for males)</li>
-<li>Acts Intended to Cause Injury is 10% of total male offending (compared with 7% for females)</li>
-</ul>
-
-<p>We&rsquo;ve laid the groundwork for understanding of the nature of offending by gender, and although there is more area to investigate (how specific offences trends over time would be interesting), we can still add to our findings:</p>
-
-<blockquote>
-<p>Male rate of offending is <strong>4x</strong> higher than females.<br />
-Male rate of offending is <strong>10x</strong> higher compared with females with what could be considered to be more violent offences (Break/Enter, Weapons/Explosvies, and Abuction/Harassment).<br />
-Females tend have higher relative proportions of Theft and Fraud/Deception than males.</p>
-</blockquote>
-
-<h2 id="sentencing">Sentencing</h2>
-
-<p>The final component to add to our analysis is sentence given in court as a consequence for the reported offence. I&rsquo;ll begin with traffic related offences, as that provides a nice large sample group:</p>
-
-<p><img src="/img/sentencing/table-traffic.png" style="width: 442.5px;"/><br />
-Figure 4</p>
-
-<p>A couple of interesting points can be seen from Figure 4, males have a larger proportion of imprisonment than females, while females have a larger proportion of Other sentences. I want to try quantify the imprisonment imbalance first, so used contingency tables to generate the following insight:</p>
-
-<blockquote>
-<p>Males are <strong>2.7</strong> times more likely to be imprisoned for a traffic offence than females.</p>
-</blockquote>
-
-<p>Now we are reaching the point where we need to be cautious; care needs to be taken when trying to identify areas of gender or racial bias. Even in the seemingly simple case above, there is actually alot of contextual information that needs to be known. For example, this screenshot from the NZ.Stat site:</p>
-
-<p><img src="/img/sentencing/nz-stat-traffic.png" style="width: 782.5px;"/></p>
-
-<p>There are <em>7</em> total subcategories for traffice offences, and it&rsquo;s clear to see there is a difference in &ldquo;seriousness&rdquo; between them (i.e. parking vs excessive alchol/drug). It&rsquo;s important to establish as much as possible a direct &ldquo;like-for-like&rdquo; comparison, so I need to drill down even further by specific offences, see Figure 5:</p>
-
-<p><img src="/img/sentencing/table-odds-ratio.png" style="width: 680.5px;"/><br />
-Figure 5: Sentence Count by Gender</p>
-
-<p>Figure 5 is a cut down version of my full analysis, showing the offences that show a particular high gender imbalance. Although not a legal expert by any means, it&rsquo;s hard to think any reason for the imprisonment rate imbalance for an like abduction/kidnapping, so the fact that males are 5 times more likely than females to receive an imprisonment sentence does seem interesting.</p>
-
-<p>Sentencing itself would be the next level of detail to dive into, and try an uncover that if females are less likely to receive imprisonment, what are they more likely to receive (i.e. community detention or intensive supervision)?</p>
-
-<p>So from Figure 5 (but the full table showing 41 different offences), we can see that:</p>
-
-<blockquote>
-<p>Males are on average <strong>2.6</strong> times more likely than females to receive an imprisonment sentence, for the same offence.</p>
-</blockquote>
-
-<h2 id="future-work">Future Work</h2>
-
-<p>For the purpose of demonstrating my thought processes and workflow, what I have in this post is sufficient, although there is alot of scope for continuation of this analysis:</p>
-
-<ul>
-<li>Split sentence type out</li>
-<li>View sentence types over time, i.e. is home detention increasing vs. imprisonment?</li>
-<li>View offence types over time, i.e. is the more serious offending increasing/decreasing?</li>
-<li>Repeat all the analysis, but by ethnicity</li>
-</ul>
-
-<p>My workflow tends to be table-based initially, with a few simple charts; once I understand the data and insights, more advanced data visualisation and infographics can be generated.</p>
-
-<h2 id="summary">Summary</h2>
-
-<p>It&rsquo;s been about a week since playing around with the data; I had not seen any of this NZ.Stat data before, so potentially my lack on contextual knowledge may have effected results; even so, here are my findings:</p>
-
-<blockquote>
-<p>Male rate of offending is <strong>4x</strong> higher than females.<br />
-Male rate of offending is <strong>10x</strong> higher compared with females for the offences Break/Enter, Weapons/Explosives, and Abduction/Harassment.<br />
-Females have higher relative proportions of Theft and Fraud/Deception than males.<br />
-Males are on average <strong>2.6</strong> times more likely than females to receive an imprisonment sentence, for the same offence.</p>
-</blockquote>
-
-<p>Any questions or comments about the analysis, I&rsquo;d be happy to hear from you.</p>
-
-  </div>
-
-  <footer>
-    <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                
-                
-                <li><a class="article-category-link" href="/tags/post">post</a></li>
-                
-            
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-
-</article>
-
-    <article class="post">
-        <div id="disqus_thread"></div>
+	
 <script>
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "wilsonjord-github-io" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-XXXXXXX-Y', 'auto');
+ga('send', 'pageview');
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
+<script async src='//www.google-analytics.com/analytics.js'></script>
 
 
-<ul class="actions pagination">
-    
-        <li><a href="/blog/wordament-solver/"
-                class="button big previous">A Wordament Solver</a></li>
-    
+</head>
+
+<body>
+    <div class="wrapper">
+
+            <div class="sidebar-wrapper">
+
+		            <div class="profile-container">
+                <img class="profile img-circle" src="https://wilsonjord.github.io/cvassets/images/profile.png" alt="" />
+                <h1 class="name">Jordan Wilson</h1>
+                <h3 class="tagline">Programmer. Data.</h3>
+            </div>
+
+
+		
+
+		
+		            <div class="contact-container container-block">
+                <ul class="list-unstyled contact-list">
+				
+                    <li class="email"><i class="fa fa-envelope"></i><a href="mailto:%20wilsonjord@gmail.com">wilsonjord@gmail.com</a></li>
+				
+                    <li class="phone"><i class="fa fa-phone"></i><a href="#ZgotmplZ">&#43;64 21 106 7637</a></li>
+				
+                    <li class="website"><i class="fa fa-globe"></i><a href="//wilsonjord.github.io">Personal Blog</a></li>
+				
+                    <li class="linkedin"><i class="fa fa-linkedin"></i><a href="//www.linkedin.com/in/wilsonjord">linkedin.com/in/wilsonjord</a></li>
+				
+                    <li class="github"><i class="fa fa-github"></i><a href="//github.com/wilsonjord">github.com/wilsonjord</a></li>
+				
+                </ul>
+            </div>
+		
+
+		
+		            <div class="education-container container-block">
+                <h2 class="container-block-title">Education</h2>
+				
+                <div class="item">
+                    <h4 class="degree">Grad. Dip. of Science</h4>
+                    <h5 class="meta">Victoria University of Wellington</h5>
+                    <div class="time">2004</div>
+                </div>
+				
+                <div class="item">
+                    <h4 class="degree">BSc in Computer Science and Mathematics</h4>
+                    <h5 class="meta">Victoria University of Wellington</h5>
+                    <div class="time">2001 - 2003</div>
+                </div>
+				
+            </div>
+
+		
+
+		
+
+		
+		            <div class="interests-container container-block">
+                <h2 class="container-block-title">Interests</h2>
+                <ul class="list-unstyled interests-list">
+				
+                    <li>Rugby</li>
+				
+                    <li>Piano</li>
+				
+                    <li>Photography</li>
+				
+                </ul>
+            </div>
+
+		
+
+        </div>
+
+
+	<div class="main-wrapper">
 
     
+	            <section class="section summary-section">
+                <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
+                <div class="summary">
+                    <p><strong>Technical professional</strong> of over 10 years experience in Human Resources (L&amp;D/Remuneration), combining programming ability, data and analytics expertise, and consultation experience. Whether it be reviewing fringe benefit tax implications on a tool of trade, developing salary budget modelling software, or formulating gender pay methodologies, my diverse skillset enables strong systems capability, extensive business process improvement, and data driven decision making.</p>
+                </div>
+            </section>
+
+    
+    
+    
+	            <section class="section goals-section">
+                <h2 class="section-title"><i class="fa fa-bullseye"></i>Goal</h2>
+                <div class="summary">
+                    <p><strong>Harness my enthusiasm</strong> for all things technical to continue to specialise and develop my coding skill and data analytics (particularly machine learning and big data), whilst utilising the stakeholder management/communication and collaboration skills that my general HR experience has provided.</p>
+                </div>
+            </section>
+
+    
+    
+    
+    <section class="section achievements-section">
+    <h2 class="section-title"><i class="fa fa-star"></i>Work Accomplishments</h2>
+    <div class="intro">
+        <p><strong>In no particular order:</strong></p>
+    </div>
+    
+    
+    
+    <div class="intro">
+        <p><ul>
+<li>Developed a facilitator/training room booking system, by taking a pre-exsisting generic &lsquo;calendar&rsquo; Excel template, learning VBA, and adding dynamic functionality (8 years on, still in regular use)</li>
 </ul>
-
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
-            </header>
-            
-
-
-
-<li>
-  <a href="//twitter.com/share?url=%2fblog%2fsentencing%2f&amp;text=Sentencing%20in%20NZ%20-%20A%20workflow%20example&amp;via=" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//plus.google.com/share?url=%2fblog%2fsentencing%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-  </a>
-</li>
-
-
-
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fsentencing%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//reddit.com/submit?url=%2fblog%2fsentencing%2f&amp;title=Sentencing%20in%20NZ%20-%20A%20workflow%20example" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fsentencing%2f&amp;title=Sentencing%20in%20NZ%20-%20A%20workflow%20example" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-
-
-
-
-
-
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by Jordan%20K.%20Wilson&amp;body=%2fblog%2fsentencing%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-
-        </ul>
-    </section>
+</p>
+    </div>
+    
+    
+    
+     
+    
+    
+    
+    <div class="intro">
+        <p><ul>
+<li>Greatly increased the rigour around gender pay analytics, from devising improved pay gap methodologies, to assisting senior leadership knowledge gain through focus of the strategic &lsquo;why&rsquo; rather than the technical &lsquo;how&rsquo;</li>
+</ul>
+</p>
+    </div>
+    
+    
+    
+     
+    
+    
+    
+    <div class="intro">
+        <p><ul>
+<li>Overhauled our internal systems data maintainance process, where I devised/updated processes, wrote reference documentation, trained analyst teams (local and overseas), and not least of all developed the software to support the new process and achieve the desired outcomes of efficiency, accurracy, and auditability</li>
+</ul>
+</p>
+    </div>
+    
+    
+    
+     
+    
+    
+    
+    <div class="intro">
+        <p><ul>
+<li>Created a suite of reporting tools, initially to overcome the reporting limitiation of the online rem system at the time, but proved generic enough for me to use successfully for many other reporting/analytics tasks</li>
+</ul>
+</p>
+    </div>
+    
+    
+    
+     
+    
+    
 </section>
+    
+    
+    
+                <section class="section projects-section">
+                <h2 class="section-title"><i class="fa fa-archive"></i>Personal Projects</h2>
+                <div class="intro">
+                    <p><strong>Below is a list of projects</strong> I&rsquo;ve developed that I use in my non-work endeavours:</p>
+                </div>
+				
+                <div class="item">
+                    <span class="project-title"><a href="https://wilsonjord.github.io/">printf (&#39;CHEESE!&#39;)</a></span> - <span class="project-tagline">My personal blog, which I started in 2018 in order to learn git, improve my HTML/JavaScript/CSS knowledge, and showcase my technical capabilities. Quickly proved to be quite fun as well.</span>
+                </div>
+				
+                <div class="item">
+                    <span class="project-title"><a href="https://github.com/wilsonjord/stocky">Stocky</a></span> - <span class="project-tagline">A trade strategy library to assist the construction and testing of stock market trading strategies.</span>
+                </div>
+				
+                <div class="item">
+                    <span class="project-title"><a href="">Dominion Simulator</a></span> - <span class="project-tagline">My initial foray into machine learning; I developed a program that plays the card game <a href='https://en.wikipedia.org/wiki/Dominion_(card_game)' target='_blank'>Dominion</a>. Basically, program the mechanics of the game, and let the AI learn the best cards to play from running thousands of simulation games (blog post pending).</span>
+                </div>
+				
+                <div class="item">
+                    <span class="project-title"><a href="https://github.com/wilsonjord/reportd">ReportD</a></span> - <span class="project-tagline">A program to convert extract-like data files into tables. Similar in concept to pivot tables in spreadsheet software, but much more configurable, and designed to meet routine reporting requirements.</span>
+                </div>
+				
+                <div class="item">
+                    <span class="project-title"><a href="https://wilsonjord.github.io/blog/wordament-solver/">A Wordament Solver</a></span> - <span class="project-tagline">A program to help solve wordament puzzles.</span>
+                </div>
+				
+                <div class="item">
+                    <span class="project-title"><a href="">Numerical Weather Forecasting</a></span> - <span class="project-tagline">From time to time, I like to run weather simulations. Provides excellent practice in building sotware on linux, as well a plenty of scope for working with large, scientific data sets, and explore data visualisations (blog post pending).</span>
+                </div>
+				
+            </section>
 
-        
+    
+
+    
+	            <section class="skills-section section">
+                <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
+                <div class="skillset">
+				
+                    <div class="item">
+                        <h3 class="level-title">D (www.dlang.org)</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="90%">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="item">
+                        <h3 class="level-title">Desktop Application Development</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="80%">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="item">
+                        <h3 class="level-title">IUP Portable User Interface</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="80%">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="item">
+                        <h3 class="level-title">GTK&#43;</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="75%">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="item">
+                        <h3 class="level-title">C# / VBA</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="70%">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="item">
+                        <h3 class="level-title">Java</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="65%">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="item">
+                        <h3 class="level-title">HTML5 &amp; CSS</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="40%">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="item">
+                        <h3 class="level-title">Python / R</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="20%">
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </section>
+
+    
+
+    
+                <section class="section experiences-section">
+                <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
+
+				
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Remuneration Consultant</h3>
+                            <div class="time">2012 - Present</div>
+                        </div>
+                        <div class="company">ANZ - Remuneration</div>
+                    </div>
+                    <div class="details">
+                        <p><ul><li>Contribute to the delivery of annual performance and remuneration reviews for a company of over 50,000 employees across serveral geographies</li><li>Ensure high data quality and functional performance for our online remuneration system by creating raw data checking scripts and regularly participating in UAT for system updates</li><li>Review salary ranges using both quantitative (market surveys) and qualitative (HR/business collaboration) approaches as necessary</li>Meet regulatory and volunterary external gender pay reporting requirements, such as the Workplace Gender Equality Agency submission and Dow Jones Sustainability Index submission<li>Meet internal reporting requirements for CEO sign-off of our annual reviews and preparation of sign off packs for approval</li></ul>
+</p>
+                    </div>
+                </div>
+				
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Business Analyst</h3>
+                            <div class="time">2011</div>
+                        </div>
+                        <div class="company">ANZ - Finance</div>
+                    </div>
+                    <div class="details">
+                        <p><ul><li>12 month secondement helping deliver the New Zealand Simplification Project (merging of the ANZ and National Bank banking systems to one system)</li><li>Performed data analysis to identify FTE savings, cost modelling of past trends and future estimates</li></ul>
+</p>
+                    </div>
+                </div>
+				
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Analyst</h3>
+                            <div class="time">2008 - 2010</div>
+                        </div>
+                        <div class="company">ANZ - Learning and Development</div>
+                    </div>
+                    <div class="details">
+                        <p><ul><li>Testing and migration of courseware from our instructional design team to our online learning management system</li><li>Provide reporting and advice, in particular course participation statistics and mandatory learning risk reporting</li></ul>
+</p>
+                    </div>
+                </div>
+				
+
+            </section>
+
+    
+
+    
+
+
+	</div>
     </div>
+
+	    <footer class="footer">
+        <div class="text-center">
+                
+                <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small><br>
+				<small class="copyright">2018 &copy; Ported for Hugo by <a href="https://github.com/aerohub" target="_blank">Pavel Kanyshev</a></small>
+        </div>
+    </footer>
+
+
+                  
+    <script type="text/javascript" src="https://wilsonjord.github.io/cvassets/plugins/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://wilsonjord.github.io/cvassets/plugins/bootstrap/js/bootstrap.min.js"></script>    
     
-<section id="sidebar">
-
-  
-  <section id="intro">
-    
-    
-      
-        <a href='/'><img src="/img/main/face1.png" class="intro-circle" width="" alt="" /></a>
-      
-    
-    
-      <header>
-        <h2>printf (&#34;CHEESE!&#34;);</h2>
-        <p>Code & Photos</p>
-      </header>
-    
-    
-      <ul class="icons">
-        
-          
-    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
-
-
-        
-        
-  <li><a href="//github.com/wilsonjord" target="_blank" title="GitHub" class="fa fa-github"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//linkedin.com/in/jordan-wilson-52436891" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="mailto:wilsonjord@gmail.com" title="Email" class="fa fa-envelope"></a></li>
-
-
-      </ul>
-    
-  </section>
-
-  
-  <section class="recent-posts">
-    <div class="mini-posts">
-      <header>
-        <h3>Recent Posts</h3>
-      </header>
-      <div class="posts-container">
-        
-
-        
-          
-        
-
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/blog/sentencing/">Sentencing in NZ - A workflow example</a>
-              </h3>
-              
-              <time class="published" datetime='2018-05-10'>
-                May 10, 2018
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/blog/wordament-solver/">A Wordament Solver</a>
-              </h3>
-              
-              <time class="published" datetime='2018-02-11'>
-                February 11, 2018
-              </time>
-            </header>
-            
-
-          </article>
-        
-      </div>
-
-      
-    </div>
-  </section>
-
-  
-  
-  
-  
-  
-    <section id="categories">
-      <header>
-        <h3>
-          <a href="/categories/">Categories</a>
-        </h3>
-      </header>
-        
-          
-        
-
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/dlang/">dlang</a>
-                <span style="float:right;">3</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/programming/">programming</a>
-                <span style="float:right;">2</span>
-              
-            </header>
-          </article>
-        </p>
-        
-    </section>
-  
-  
-
-  
-  
-    <section id="mini-bio">
-      <h3>About</h3>
-      <p>I'm Jordan Wilson, and I like to programming, correct grammar, and photography. Welcome to my attempts to improve all three.</p>
-      <a href="/about/" class="button">Learn More</a>
-    </section>
-  
-
-  
-  <section id="footer">
-    
-      <ul class="icons">
-        
-          
-    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
-
-
-        
-        
-  <li><a href="//github.com/wilsonjord" target="_blank" title="GitHub" class="fa fa-github"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//linkedin.com/in/jordan-wilson-52436891" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="mailto:wilsonjord@gmail.com" title="Email" class="fa fa-envelope"></a></li>
-
-
-      </ul>
-    
-    <p class="copyright">
-      
-        &copy; 2018
-        
-          printf (&#34;CHEESE!&#34;);
-        
-      .
-      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
-    </p>
-  </section>
-</section>
-
-    </div>
-    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
-    
-
-    
-      
-    
-
-    
-      
-      
-      
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
-        
-        
-        
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/d.min.js"></script>
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/dlang.min.js"></script>
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/D.min.js"></script>
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
-        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
-      
-    
-    
-    
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
-      <script src="/js/util.js"></script>
-      <script src="/js/main.js"></script>
-      <script src="/js/backToTop.js"></script>
-    
-
-    
-      
-        
-      
-    
-
-    
-    <script>hljs.initHighlightingOnLoad();</script>
-  </body>
+    <script type="text/javascript" src="https://wilsonjord.github.io/cvassets/js/main.js"></script> 
+</body>
 </html>
-
